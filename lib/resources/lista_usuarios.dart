@@ -15,7 +15,7 @@ class ListaUsarios extends StatelessWidget {
             leading: CircleAvatar(
                 child: ClipOval(
               child: usuarios[index].img == null || usuarios[index].img == ""
-                  ? Image.asset("assets/images/default.jpg", fit: BoxFit.cover)
+                  ? Image.asset("assets/images/user.png", fit: BoxFit.cover)
                   : Image.network(
                       "http://192.168.1.45:3000/img/${usuarios[index].img}",
                       fit: BoxFit.cover),

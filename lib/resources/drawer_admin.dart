@@ -28,6 +28,9 @@ class _DrawerAdminState extends State<DrawerAdmin> {
               return UserAccountsDrawerHeader(
                 accountName: Text(state.nombre),
                 accountEmail: Text(state.email),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage("${state.img}"),
+                ),
               );
             } else {
               return ListTile(

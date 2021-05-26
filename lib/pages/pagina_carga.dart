@@ -23,12 +23,15 @@ class _PaginaCargaState extends State<PaginaCarga> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Color(0xff0984e3), Color(0xff74b9ff)],
-              end: Alignment.bottomCenter,
-              begin: Alignment.topCenter),
+              colors: [Colors.white, Colors.blue[300]],
+              end: Alignment.bottomLeft,
+              begin: Alignment.topRight),
         ),
         child: Center(
-          child: Image.asset("assets/icons/logo_small_icon_only.png"),
+          child: Image.asset(
+            "assets/icons/logo_large.png",
+            width: 170,
+          ),
         ),
       ),
     );

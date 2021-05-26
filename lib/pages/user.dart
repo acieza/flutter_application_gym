@@ -23,7 +23,7 @@ class _UserState extends State<User> {
   @override
   void initState() {
     vueltaBloc = BlocProvider.of<AuthBloc>(context);
-    // clasesList = api.getUsuarioPopulate(widget.id);
+    clasesList = api.getUsuarioPopulate(widget.id);
     super.initState();
   }
 

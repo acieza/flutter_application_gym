@@ -105,6 +105,7 @@ class _LoginState extends State<Login> {
                               ),
                             )),
                           ),
+                          SizedBox(height: 40),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[

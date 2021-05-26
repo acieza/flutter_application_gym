@@ -47,7 +47,7 @@ class ListaClasesUser extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             child: clases[index].imagen == null ||
                                     clases[index].imagen == ""
-                                ? Image.asset("assets/images/default2.jpg",
+                                ? Image.asset("assets/images/user.png",
                                     fit: BoxFit.cover)
                                 : Image.network(
                                     "http://192.168.1.45:3000/imgClase/${clases[index].imagen}",

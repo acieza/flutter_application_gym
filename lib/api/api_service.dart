@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_application_gym/models/clase.dart';
+import 'package:flutter_application_gym/models/ejercicio.dart';
+import 'package:flutter_application_gym/models/usuario.dart';
 import 'package:flutter_application_gym/models/usuario_list.dart';
 import 'package:http/http.dart' as http;
 
@@ -69,6 +71,19 @@ class ApiService {
     }
   }
 
+  // Future<Usuario> getUsuarioPopulate(String id) async {
+  //   http.Response res = await http.get(Uri.parse("$apiUrl/usuarios/total/$id"));
+  //   if (res.statusCode == 200) {
+  //     var body = jsonDecode(res.body);
+  //     Usuario usuario =
+  //         body.map((dynamic item) => Usuario.fromJson(item)).toList();
+  //     return usuario;
+  //   } else {
+  //     print(res);
+  //     throw "Error al cargar el usuario";
+  //   }
+  // }
+
   Future<List<Clase>> getAllClases() async {
     http.Response res = await http.get(Uri.parse("$apiUrl/clases"));
 
@@ -108,16 +123,29 @@ class ApiService {
     }
   }
 
-//   Future<List<Clase>> getAllClases(String id) async {
-//     http.Response res = await http.get("$apiUrl/cursos/cursoPopMovil/$id");
+  Future<List<Ejercicio>> getAllEjercicios(String id) async {
+    http.Response res = await http.get(Uri.parse("$apiUrl/clases/total/$id"));
 
-//     if (res.statusCode == 200) {
-//       List<dynamic> body = jsonDecode(res.body);
-//       List<Clase> clases =
-//           body.map((dynamic item) => Clase.fromJson(item)).toList();
-//       return clases;
-//     } else {
-//       throw "Error en la lista de Clases";
-//     }
-//   }
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      List<Ejercicio> ejer =
+          body.map((dynamic item) => Ejercicio.fromJson(item)).toList();
+      return ejer;
+    } else {
+      print(res);
+      throw "Error en la lista de Ejercicios";
+    }
+  }
+  // Future<List<Clase>> getUsuarioPopulate(String id) async {
+  //   http.Response res = await http.get(Uri.parse("$apiUrl/usuarios/total/$id"));
+  //   if (res.statusCode == 200) {
+  //     List<dynamic> body = jsonDecode(res.body);
+  //     List<Clase> clases =
+  //         body.map((dynamic item) => Clase.fromJson(item)).toList();
+  //     return clases;
+  //   } else {
+  //     print(res);
+  //     throw "Error al cargar el usuario";
+  //   }
+  // }
 }

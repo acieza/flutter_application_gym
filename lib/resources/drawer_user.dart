@@ -28,6 +28,9 @@ class _DrawerUserState extends State<DrawerUser> {
               return UserAccountsDrawerHeader(
                 accountName: Text(state.nombre),
                 accountEmail: Text(state.email),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage("${state.img}"),
+                ),
               );
             } else {
               return ListTile(
@@ -39,6 +42,16 @@ class _DrawerUserState extends State<DrawerUser> {
           ListTile(
             title: Text("Perfil"),
             trailing: Icon(Icons.edit),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text("Clases gymOn"),
+            trailing: Icon(Icons.apps_outlined),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text("Mis clases"),
+            trailing: Icon(Icons.app_registration),
             onTap: () {},
           ),
           Divider(),

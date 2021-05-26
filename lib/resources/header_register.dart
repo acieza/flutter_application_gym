@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HeaderLogin extends StatelessWidget {
+class HeaderRegister extends StatelessWidget {
   String text;
 
-  HeaderLogin({this.text});
+  HeaderRegister({this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HeaderLogin extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage("assets/images/pexels-burst-374101.jpg")),
+            image: AssetImage("assets/images/spinning1.jpg")),
         color: Colors.black,
         // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100))),
       ),

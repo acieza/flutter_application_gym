@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/models/clase.dart';
+import 'package:flutter_application_gym/pages/ejercicios.dart';
 
 class ListaClasesAdmin extends StatelessWidget {
   final List<Clase> clases;
@@ -29,7 +30,10 @@ class ListaClasesAdmin extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => Temario(id: cursos[index].id)));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Ejercicios(id: clases[index].id)));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

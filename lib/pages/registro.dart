@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/api/api_service.dart';
 import 'package:flutter_application_gym/resources/header_login.dart';
+import 'package:flutter_application_gym/resources/header_register.dart';
 
 class Registro extends StatefulWidget {
   Registro({Key key}) : super(key: key);
@@ -22,7 +23,7 @@ class _RegistroState extends State<Registro> {
         padding: EdgeInsets.only(bottom: 30),
         child: Column(
           children: <Widget>[
-            HeaderLogin(text: "Registro"),
+            HeaderRegister(text: "Registro"),
             Expanded(
               flex: 1,
               child: Form(
@@ -71,6 +72,7 @@ class _RegistroState extends State<Registro> {
                             ),
                           )),
                         ),
+                        SizedBox(height: 10),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -82,7 +84,7 @@ class _RegistroState extends State<Registro> {
                                     Navigator.pushNamed(context, '/login');
                                   },
                                   child: Text(
-                                    'Logeate',
+                                    'Login',
                                     style: TextStyle(
                                         color: Color(0xff0984e3),
                                         decoration: TextDecoration.underline),
