@@ -58,7 +58,8 @@ class ApiService {
   }
 
   Future<List<Clase>> getUsuarioPopulate(String id) async {
-    http.Response res = await http.get(Uri.parse("$apiUrl/usuarios/total/$id"));
+    http.Response res =
+        await http.get(Uri.parse("$apiUrl/usuarios/total/movil/$id"));
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
       List<Clase> clases =
@@ -69,19 +70,6 @@ class ApiService {
       throw "Error al cargar el usuario";
     }
   }
-
-  // Future<Usuario> getUsuarioPopulate(String id) async {
-  //   http.Response res = await http.get(Uri.parse("$apiUrl/usuarios/total/$id"));
-  //   if (res.statusCode == 200) {
-  //     var body = jsonDecode(res.body);
-  //     Usuario usuario =
-  //         body.map((dynamic item) => Usuario.fromJson(item)).toList();
-  //     return usuario;
-  //   } else {
-  //     print(res);
-  //     throw "Error al cargar el usuario";
-  //   }
-  // }
 
   Future<List<Clase>> getAllClases() async {
     http.Response res = await http.get(Uri.parse("$apiUrl/clases"));
@@ -123,7 +111,8 @@ class ApiService {
   }
 
   Future<List<Ejercicio>> getAllEjercicios(String id) async {
-    http.Response res = await http.get(Uri.parse("$apiUrl/clases/total/$id"));
+    http.Response res =
+        await http.get(Uri.parse("$apiUrl/clases/total/movil/$id"));
 
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
@@ -135,16 +124,4 @@ class ApiService {
       throw "Error en la lista de Ejercicios";
     }
   }
-  // Future<List<Clase>> getUsuarioPopulate(String id) async {
-  //   http.Response res = await http.get(Uri.parse("$apiUrl/usuarios/total/$id"));
-  //   if (res.statusCode == 200) {
-  //     List<dynamic> body = jsonDecode(res.body);
-  //     List<Clase> clases =
-  //         body.map((dynamic item) => Clase.fromJson(item)).toList();
-  //     return clases;
-  //   } else {
-  //     print(res);
-  //     throw "Error al cargar el usuario";
-  //   }
-  // }
 }
