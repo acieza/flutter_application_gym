@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/auth_b/auth_bloc.dart';
+import 'package:flutter_application_gym/pages/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DrawerUser extends StatefulWidget {
@@ -29,7 +30,9 @@ class _DrawerUserState extends State<DrawerUser> {
                 accountName: Text(state.nombre),
                 accountEmail: Text(state.email),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage("${state.img}"),
+                  backgroundImage: state.img == null || state.img == ""
+                      ? Image.asset("assets/images/user.png", fit: BoxFit.cover)
+                      : NetworkImage("${state.img}"),
                 ),
               );
             } else {
@@ -47,12 +50,16 @@ class _DrawerUserState extends State<DrawerUser> {
           ListTile(
             title: Text("Clases gymOn"),
             trailing: Icon(Icons.apps_outlined),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/userC');
+            },
           ),
           ListTile(
             title: Text("Mis clases"),
             trailing: Icon(Icons.app_registration),
-            onTap: () {},
+            onTap: () {
+              // Navigator.pushNamed(context, '/user');
+            },
           ),
           Divider(),
           ListTile(

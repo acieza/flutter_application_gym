@@ -8,6 +8,7 @@ import 'package:flutter_application_gym/pages/login.dart';
 import 'package:flutter_application_gym/pages/pagina_carga.dart';
 import 'package:flutter_application_gym/pages/registro.dart';
 import 'package:flutter_application_gym/pages/user.dart';
+import 'package:flutter_application_gym/pages/user_c.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/adminC': (context) => Admin(),
           '/adminU': (context) => AdminU(),
           '/adminP': (context) => AdminP(),
+          '/userC': (context) => UserC(),
         },
       ),
     );

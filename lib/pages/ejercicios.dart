@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/api/api_service.dart';
 import 'package:flutter_application_gym/models/ejercicio.dart';
+import 'package:flutter_application_gym/pages/video.dart';
 
 class Ejercicios extends StatefulWidget {
   Ejercicios({Key key, this.id}) : super(key: key);
@@ -16,7 +17,7 @@ class _EjerciciosState extends State<Ejercicios> {
 
   @override
   void initState() {
-    // ejercicios = api.getAllEjercicios(widget.id);
+    ejercicios = api.getAllEjercicios(widget.id);
     super.initState();
   }
 
@@ -28,10 +29,10 @@ class _EjerciciosState extends State<Ejercicios> {
       ),
       body: Container(
           //padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-          color: Colors.black87,
+          color: Colors.black,
           child: (ejercicios == null)
               ? Center(
-                  child: Text("No hay clases disponibles",
+                  child: Text("No hay ejercicios disponibles",
                       style: TextStyle(color: Colors.white)),
                 )
               : FutureBuilder<List<Ejercicio>>(
@@ -50,29 +51,42 @@ class _EjerciciosState extends State<Ejercicios> {
                                     width: double.infinity,
                                     padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                                     child: Text(
-                                      snapshot.data[index].nombre,
+                                      "Ejercicios de: ",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.white54,
+                                          color: Colors.grey,
                                           fontSize: 14),
                                     ),
                                   ),
-                                  // Container(
-                                  //   child: Column(
-                                  //     children: [
-                                  //       for ( var i  in snapshot.data[index].temas )
-                                  //       InkWell(
-                                  //         onTap: (){
-                                  //           Navigator.push(context, MaterialPageRoute(builder: (context) => Video(link: i.link, detalle: i.detalle,)));
-                                  //         },
-                                  //  ListTile(
-                                  //   title: Text(i.nombreTema, style: TextStyle(color: Colors.white)),
-                                  //   trailing: Icon(Icons.arrow_forward, color: Colors.white ,),
-                                  // ),
-                                  // ),
-                                  //     ],
-                                  //   )
-                                  // ),
+                                  Container(
+                                      child: Column(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => Video(
+                                                        link: snapshot
+                                                            .data[index].link,
+                                                        detalle: snapshot
+                                                            .data[index]
+                                                            .detalle,
+                                                      )));
+                                        },
+                                        child: ListTile(
+                                          title: Text(
+                                              snapshot.data[index].nombre,
+                                              style: TextStyle(
+                                                  color: Colors.white)),
+                                          trailing: Icon(
+                                            Icons.arrow_forward,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )),
                                 ],
                               ),
                             );

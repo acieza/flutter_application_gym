@@ -34,8 +34,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         // pref.setString('peso', datos['usuarioLogin']['peso']);
 
         if (datos['usuarioLogin']['img'] == null) {
-          pref.setString('img', "assets/imagen/user.png");
-          img = "assets/imagen/user.png";
+          pref.setString('img', "assets/images/user.png");
+          img = "assets/images/user.png";
         } else {
           pref.setString('img',
               "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}");
@@ -55,8 +55,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         pref.setString('nombre', datos['usuarioLogin']['nombre']);
         pref.setString('email', datos['usuarioLogin']['email']);
         if (datos['usuarioLogin']['img'] == null) {
-          pref.setString('img', "assets/imagen/user.png");
-          img = "assets/imagen/user.png";
+          pref.setString('img', "assets/images/user.png");
+          img = "assets/images/user.png";
         } else {
           pref.setString('img',
               "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}");

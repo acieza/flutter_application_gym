@@ -42,7 +42,6 @@ class _LoginState extends State<Login> {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is UserLoginSuccesState) {
-            //return Navigator.pushNamed(context, '/user', arguments: User(id: state.id));
             return Navigator.push(context,
                 MaterialPageRoute(builder: (context) => User(id: state.id)));
           } else if (state is AdminLoginSuccesState) {

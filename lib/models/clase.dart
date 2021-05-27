@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'ejercicio.dart';
+
 class Clase {
   Clase({
     this.id,
@@ -8,6 +10,7 @@ class Clase {
     this.descripcion,
     this.diaS,
     this.hora,
+    // this.ejercicios,
   });
 
   String id;
@@ -16,6 +19,7 @@ class Clase {
   String descripcion;
   String diaS;
   String hora;
+  // List<Ejercicio> ejercicios;
 
   factory Clase.fromJson(Map<String, dynamic> json) => Clase(
         id: json["_id"],
@@ -24,6 +28,8 @@ class Clase {
         descripcion: json["descripcion"],
         diaS: json["diaS"],
         hora: json["hora"],
+        // ejercicios: List<Ejercicio>.from(
+        //     json["ejercicios"].map((x) => Ejercicio.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -33,5 +39,6 @@ class Clase {
         "descripcion": descripcion,
         "diaS": diaS,
         "hora": hora,
+        // "ejercicios": List<dynamic>.from(ejercicios.map((x) => x.toJson())),
       };
 }

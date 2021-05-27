@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/models/clase.dart';
-import 'package:flutter_application_gym/models/ejercicio.dart';
 import 'package:flutter_application_gym/pages/ejercicios.dart';
 
-class ListaClasesUser extends StatelessWidget {
+class ListaClases extends StatelessWidget {
   final List<Clase> clases;
-  ListaClasesUser({Key key, this.clases}) : super(key: key);
+  const ListaClases({Key key, this.clases}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +29,12 @@ class ListaClasesUser extends StatelessWidget {
             ],
           ),
           child: InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Ejercicios(id: clases[index].id)));
-            },
+            // onTap: () {
+            //   Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //           builder: (context) => Ejercicios(id: clases[index].id)));
+            // },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -52,7 +51,7 @@ class ListaClasesUser extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             child: clases[index].imagen == null ||
                                     clases[index].imagen == ""
-                                ? Image.asset("assets/images/user.png",
+                                ? Image.asset("assets/images/default2.jpg",
                                     fit: BoxFit.cover)
                                 : Image.network(
                                     "http://192.168.1.45:3000/imgClase/${clases[index].imagen}",
@@ -78,7 +77,7 @@ class ListaClasesUser extends StatelessWidget {
                               child: Row(
                                 children: <Widget>[
                                   Text(
-                                    clases[index].diaS,
+                                    "Día: ${clases[index].diaS}",
                                     style: TextStyle(fontSize: 16),
                                   ),
                                   Icon(
@@ -92,7 +91,7 @@ class ListaClasesUser extends StatelessWidget {
                               child: Row(
                                 children: <Widget>[
                                   Text(
-                                    clases[index].hora,
+                                    " ${clases[index].hora}",
                                     style: TextStyle(fontSize: 16),
                                   ),
                                   Icon(
