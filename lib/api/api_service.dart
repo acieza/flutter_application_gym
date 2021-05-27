@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_application_gym/models/clase.dart';
 import 'package:flutter_application_gym/models/ejercicio.dart';
-import 'package:flutter_application_gym/models/usuario.dart';
 import 'package:flutter_application_gym/models/usuario_list.dart';
 import 'package:http/http.dart' as http;
 

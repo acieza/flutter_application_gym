@@ -6,7 +6,6 @@ import 'package:flutter_application_gym/pages/user.dart';
 import 'package:flutter_application_gym/resources/drawer_admin.dart';
 import 'package:flutter_application_gym/resources/lista_clases_admin.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Admin extends StatefulWidget {
   Admin({Key key}) : super(key: key);

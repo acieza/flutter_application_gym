@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/api/api_service.dart';
-import 'package:flutter_application_gym/resources/header_login.dart';
 import 'package:flutter_application_gym/resources/header_register.dart';
 
 class Registro extends StatefulWidget {

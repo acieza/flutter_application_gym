@@ -5,9 +5,7 @@ import 'package:flutter_application_gym/models/clase.dart';
 import 'package:flutter_application_gym/pages/user.dart';
 import 'package:flutter_application_gym/resources/drawer_user.dart';
 import 'package:flutter_application_gym/resources/lista_clases.dart';
-import 'package:flutter_application_gym/resources/lista_clases_admin.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class UserC extends StatefulWidget {
   UserC({Key key}) : super(key: key);

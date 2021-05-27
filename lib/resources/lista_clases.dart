@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/models/clase.dart';
-import 'package:flutter_application_gym/pages/ejercicios.dart';
 
 class ListaClases extends StatelessWidget {
   final List<Clase> clases;

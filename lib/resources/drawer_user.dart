@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_gym/auth_b/auth_bloc.dart';
-import 'package:flutter_application_gym/pages/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DrawerUser extends StatefulWidget {

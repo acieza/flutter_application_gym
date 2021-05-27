@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'ejercicio.dart';
-
 class Clase {
   Clase({
     this.id,

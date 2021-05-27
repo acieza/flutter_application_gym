@@ -29,7 +29,9 @@ class _DrawerAdminState extends State<DrawerAdmin> {
                 accountName: Text(state.nombre),
                 accountEmail: Text(state.email),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage("${state.img}"),
+                  backgroundImage: state.img == null || state.img == ""
+                      ? Image.asset("assets/images/user.png", fit: BoxFit.cover)
+                      : NetworkImage("${state.img}"),
                 ),
               );
             } else {
