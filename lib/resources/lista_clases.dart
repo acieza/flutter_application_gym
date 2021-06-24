@@ -40,29 +40,30 @@ class ListaClases extends StatelessWidget {
                 Container(
                   width: 260,
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: 70,
-                          height: 70,
-                          margin: EdgeInsets.only(right: 20),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: clases[index].imagen == null ||
-                                    clases[index].imagen == ""
-                                ? Image.asset("assets/images/default2.jpg",
-                                    fit: BoxFit.cover)
-                                : Image.network(
-                                    "http://192.168.1.46:3000/imgClase/${clases[index].imagen}",
-                                    fit: BoxFit.cover),
-                          ),
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        width: 70,
+                        height: 70,
+                        margin: EdgeInsets.only(right: 20),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: clases[index].imagen == null ||
+                                  clases[index].imagen == ""
+                              ? Image.asset("assets/images/default2.jpg",
+                                  fit: BoxFit.cover)
+                              : Image.network(
+                                  "http://192.168.1.46:3000/imgClase/${clases[index].imagen}",
+                                  fit: BoxFit.cover),
                         ),
-                        Container(
-                            width: 160,
-                            child: Text(clases[index].nombre,
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)))
-                      ]),
+                      ),
+                      Container(
+                          width: 160,
+                          child: Text(clases[index].nombre,
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)))
+                    ],
+                  ),
                 ),
                 Container(
                   width: 300,
