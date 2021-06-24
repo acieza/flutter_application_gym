@@ -38,8 +38,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           img = "assets/images/user.png";
         } else {
           pref.setString('img',
-              "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}");
-          img = "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}";
+              "http://192.168.1.46:3000/img/${datos['usuarioLogin']['img']}");
+          img = "http://192.168.1.46:3000/img/${datos['usuarioLogin']['img']}";
         }
         yield UserLoginSuccesState(
           id: datos['usuarioLogin']['_id'],
@@ -59,8 +59,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           img = "assets/images/user.png";
         } else {
           pref.setString('img',
-              "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}");
-          img = "http://192.168.1.45:3000/img/${datos['usuarioLogin']['img']}";
+              "http://192.168.1.46:3000/img/${datos['usuarioLogin']['img']}");
+          img = "http://192.168.1.46:3000/img/${datos['usuarioLogin']['img']}";
         }
         yield AdminLoginSuccesState(
           id: datos['usuarioLogin']['_id'],

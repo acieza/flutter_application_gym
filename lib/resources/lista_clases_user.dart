@@ -54,7 +54,7 @@ class ListaClasesUser extends StatelessWidget {
                                 ? Image.asset("assets/images/user.png",
                                     fit: BoxFit.cover)
                                 : Image.network(
-                                    "http://192.168.1.45:3000/imgClase/${clases[index].imagen}",
+                                    "http://192.168.1.46:3000/imgClase/${clases[index].imagen}",
                                     fit: BoxFit.cover),
                           ),
                         ),

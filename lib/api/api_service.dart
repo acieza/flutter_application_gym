@@ -5,7 +5,7 @@ import 'package:flutter_application_gym/models/usuario_list.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String apiUrl = "http://192.168.1.45:3000";
+  final String apiUrl = "http://192.168.1.46:3000";
 
   login(String email, String password) async {
     var respuesta = await http.post(
